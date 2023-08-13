@@ -1,0 +1,96 @@
+.publications {
+    background: $bg-color;
+    padding: 30px 0;
+
+    // .publications__link
+
+    &__link {
+        @include base-link;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 14px;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+
+    // .publications__title
+
+    &__title {
+        @include main-gradient-text($gradient-red-text);
+        @include subtitle(transparent);
+        margin-bottom: 30px;
+    }
+
+    // .publications__cards
+
+    &__cards {
+        display: flex;
+        flex-flow: wrap;
+        gap: 30px;
+    }
+
+    // .publications__card
+
+    &__card {
+        flex: 1 1 100%;
+        background: $basic-white;
+        @media screen and (min-width: $breakpoint-md) {
+            flex: 1 1 47%;
+        }
+        @media screen and (min-width: $breakpoint-lg) {
+            flex: 1 1 30%;
+        }
+    }
+
+    // .publications__card-img
+
+    &__card-img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 8px 8px 0px 0px;
+    }
+
+    // .publications__card-inner
+
+    &__card-inner {
+        padding: 30px;
+        
+    }
+
+    // .publications__card-link
+
+    &__card-link {
+        @include base-link;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+
+    // .publications__card-data
+
+    &__card-data {
+        color: $text-color;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 1px;
+
+        &::after {
+            content: '';
+            display: inline-block;
+            height: 4px;
+            min-width: 100%;
+            background: $separator-color;
+            margin: 15px 0 15px;
+        }
+    }
+
+    // .publications__card-text
+
+    &__card-text {
+        color: #000;
+        font-size: 14px;
+        line-height: 22px;
+    }
+}

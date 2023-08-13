@@ -1,0 +1,121 @@
+.footer {
+    padding: 30px 0;
+    background: $bg-color;
+
+    &__wrapper {
+        display: flex;
+        gap: 20px;
+        flex-flow: column;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            background: $separator-color;
+            width: 100%;
+            height: 2px;
+            margin-bottom: 30px;
+        }
+
+        @media screen and (min-width: $breakpoint-md) {
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+        
+    }
+
+    &__location {
+        display: flex;
+        flex-flow: column;
+        gap: 10px;
+        align-items: center;
+        order: 1;
+
+        @media screen and (min-width: $breakpoint-md) {
+            flex-flow: row;
+            width: 48%;
+        }
+    }
+
+    // .footer__address
+
+    &__location-address {
+        color: $main-color;
+        font-size: 16px;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+
+    // .footer__map
+
+    &__location-map {
+        @include base-link;
+        font-weight: 700;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    // .footer__contacts
+
+    &__contacts {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        gap: 10px;
+        order: 2;
+        @media screen and (min-width: $breakpoint-md) {
+            flex-flow: row;
+            justify-content: end;
+        }
+    }
+
+    &__contacts-link {
+        fill: $regular-color;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            fill: $accent-color;
+        }
+    }
+
+    // .footer__contacts-tel
+
+    &__contacts-tel {
+        color: $alt-color;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+
+    // .footer__contacts-email
+
+    &__contacts-email {
+        @include base-link;
+        font-weight: 700;
+        font-size: 16px;
+    }
+
+    // .footer__copyright
+
+    &__copyright {
+        margin-top: 10px;
+        text-align: center;
+        color: $text-color;
+        font-size: 16px;
+        order: 3;
+
+        @media screen and (min-width: $breakpoint-md) {
+            order: 2;
+            width: 48%;
+            text-align: end;
+            margin: 0;
+        }
+    }
+}

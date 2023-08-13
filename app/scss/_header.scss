@@ -1,0 +1,362 @@
+.head {
+	min-height: 100vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	background: url('../images/hlegal-symbol.svg') no-repeat center/auto 100%;
+	@media screen and (min-width: $breakpoint-md) {
+		background-size: cover;
+	}
+	@media screen and (min-width: $breakpoint-lg) {
+		background-size: auto 100%;
+	}
+	
+	&__header {
+	}
+
+	&__title {
+		@include title($basic-white);
+		@include flex-center;
+		text-align: center;
+	}
+
+	&__link {
+		width: 42px;
+		height: 42px;
+		border: 1px solid $basic-white;
+		border-radius: $radius-rounded;
+		position: relative;
+		margin: 0 auto 30px;
+		transition: all .3s ease-in-out;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 10px;
+			left: 13px;
+			width: 14px;
+			height: 14px;
+			border-bottom: 2px solid $basic-white;
+			border-left: 2px solid $basic-white;
+			transform: rotate(-45deg);
+		}
+
+		&:hover {
+			border: 1px solid $accent-color;
+		}
+
+	}
+
+	&__service {
+		background: none;
+	    justify-content: start;
+	}
+}
+
+.header {
+	padding-bottom: 10px;
+	@media screen and (min-width: $breakpoint-md) {
+		padding: 50px 0 10px;
+	}
+
+	&__container {
+		@media screen and (min-width: $breakpoint-lg) {
+			position: relative;
+		}
+	}
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-weight: 700;
+		padding: 10px 30px;
+		background: rgba($bg-color, 0.2);
+		margin: 0 -30px 15px;
+
+		@media screen and (min-width: $breakpoint-md) {
+			margin: 0 0 30px;
+			padding: 0;
+			background: transparent;
+			justify-content: flex-start;
+			gap: 6px;
+		}
+		@media screen and (min-width: $breakpoint-lg) {
+			justify-content: flex-end;
+			margin-bottom: 15px;
+		}
+	}
+
+	&__langs {
+		display: flex;
+	}
+
+	&__langs-item {
+
+	}
+
+	&__langs-link {
+		color: $basic-white;
+		text-decoration: none;
+		font-size: 12px;
+		padding: 5px 7px;
+		display: block;
+		border-radius: $radius-sm;
+		text-transform: uppercase;
+		transition: all .3s ease-in-out;
+
+		&.active {
+			background: $accent-color;
+		}
+
+		&:hover {
+			background: $soft-color;
+		}
+
+	}
+
+	&__address {
+		display: none;
+		@media screen and (min-width: $breakpoint-md) {
+			display: block;
+			color: $text-color;
+			font-weight: 400;
+			cursor: pointer;
+			transition: all .3s ease-in-out;
+
+			&:hover {
+				color: $accent-color;
+			}
+		}
+	}
+
+	&__phone {
+		color: $basic-white;
+		text-decoration: none;
+		position: relative;
+		@media screen and (min-width: $breakpoint-md) {
+			transition: all .3s ease-in-out;
+
+			&:hover {
+				color: $accent-color;
+			}
+		}
+	}
+
+	&__social {
+		display: none;
+		@media screen and (min-width: $breakpoint-md) {
+			display: block;
+			fill: $basic-white;
+			transition: all .3s ease-in-out;
+
+			&:hover {
+				fill: $accent-color;
+			}
+		}
+	}
+
+	&__box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@media screen and (min-width: $breakpoint-md) {
+			margin-bottom: 30px;
+		}
+		@media screen and (min-width: $breakpoint-lg) {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 30px;
+			margin-bottom: 0;
+		}
+	}
+
+	&__box-logo {
+		color: $basic-white;
+		text-decoration: none;
+		font-size: 20px;
+		display: flex;
+		align-items: center;
+		gap: 5px;
+
+		span {
+			font-size: 20px;
+
+			@media screen and (min-width: $breakpoint-md) {
+				font-size: 36px;
+			}
+		}
+	}
+
+	&__box-img {
+		width: 70px;
+		height: 32px;
+			@media screen and (min-width: $breakpoint-md) {
+				width: 130px;
+				height: 60px;
+			}
+	}
+
+	&__box-slash {
+		width: 12px;
+		height: 26px;
+
+		@media screen and (min-width: $breakpoint-md) {
+			width: 21px;
+			height: 47px;
+		}
+	}
+
+	&__box-burger {
+		width: 24px;
+		height: 18px;
+		cursor: pointer;
+		position: relative;
+		@media screen and (min-width: $breakpoint-md) {
+			display: none;
+		}
+
+		&::before, &::after, span {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 2px;
+			background: $basic-white;
+		}
+		&::after {
+			top: auto;
+			bottom: 0;
+		}
+		span {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+	&__nav {
+		position: fixed;
+		bottom: -100%;
+		left: 8px;
+		right: 8px;
+		background: $basic-white;
+		border-radius: $radius-md $radius-md 0 0;
+		padding: 12px;
+		transition: bottom .3s linear;
+		&.active {
+			bottom: 0;
+		}
+		@media screen and (min-width: $breakpoint-md) {
+			position: static;
+			background: transparent;
+			padding: 0;
+			border-radius: 0;
+		}
+	}
+
+	&__nav-close {
+		width: 22px;
+		height: 22px;
+		cursor: pointer;
+		margin: 0 0 20px auto;
+		position: relative;
+		@media screen and (min-width: $breakpoint-md) {
+			display: none;
+		}
+
+		&::before, &::after {
+			content: '';
+			position: absolute;
+			top: 10px;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background: $accent-color;
+			transform: rotate(45deg);
+		}
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+
+	&__nav-list {
+		@media screen and (min-width: $breakpoint-md) {
+			display: flex;
+			gap: 15px;
+		}
+		@media screen and (min-width: $breakpoint-lg) {
+			justify-content: flex-end;
+		}
+	}
+
+	&__nav-item {
+		text-align: center;
+		margin-bottom: 15px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		@media screen and (min-width: $breakpoint-md) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__nav-link {
+		text-decoration: none;
+		font-size: 24px;
+		font-weight: 700;
+		color: $regular-color;
+		border-radius: $radius-md;
+		background: $bg-color;
+		padding: 7px;
+		display: block;
+		transition: all .3s ease-in-out;
+		@media screen and (min-width: $breakpoint-md) {
+			border-radius: 0;
+			background: none;
+			color: $basic-white;
+			font-size: 16px;
+			padding: 0;
+		}
+
+		&.active {
+			color: $accent-color;
+			@media screen and (min-width: $breakpoint-md) {
+				color: $accent-color;
+
+				&::after {
+					content: '';
+					display: inline-block;
+					width: 100%;
+					height: 2px;
+					background: $accent-color;
+				}
+			}
+		}
+
+		&:hover {
+			background: $bg-alt-color;
+			transition: all .3s ease-in-out;
+			@media screen and (min-width: $breakpoint-md) {
+				background: none;
+				color: $accent-color;
+			}
+		}
+
+		&:active {
+			background: $separator-color;
+			@media screen and (min-width: $breakpoint-md) {
+				background: none;
+			}
+		}
+	}
+
+	&__service {
+		margin-bottom: 30px;
+
+		@media screen and (min-width: $breakpoint-md) {
+			margin-bottom: 60px;
+		}
+	}
+}
