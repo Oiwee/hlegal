@@ -39,13 +39,19 @@ const swiper = new Swiper('.swiper', {
 	  mousewheel: true,
   });
   
-  const teamSwiper = new Swiper('.team__swiper ', {
-	  spaceBetween: 30,
-	  loop: true,
-	  autoplay: true,
-	  autoHeight: true,
-	  pagination: {
-		  el: ".team__swiper-pagination",
-		  clickable: true,
-	  },
-  });
+
+  const slider = document.querySelector('.team__swiper')
+  if(slider) {
+	const teamSwiper = new Swiper('.team__swiper ', {
+		spaceBetween: 30,
+		loop: true,
+		autoplay: true,
+		autoHeight: true,
+		pagination: {
+			el: ".team__swiper-pagination",
+			clickable: true,
+		},
+	});
+  }
+
+  

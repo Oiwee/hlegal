@@ -29,6 +29,10 @@
 		margin: 0 auto 30px;
 		transition: all .3s ease-in-out;
 
+		&:hover {
+			border: 1px solid $accent-color;
+		}
+
 		&::before {
 			content: '';
 			position: absolute;
@@ -40,16 +44,12 @@
 			border-left: 2px solid $basic-white;
 			transform: rotate(-45deg);
 		}
-
-		&:hover {
-			border: 1px solid $accent-color;
-		}
-
 	}
 
 	&__service {
 		background: none;
 	    justify-content: start;
+		min-height: 0;
 	}
 }
 
@@ -178,7 +178,8 @@
 		font-size: 20px;
 		display: flex;
 		align-items: center;
-		gap: 5px;
+		gap: 30px;
+		background: url('../images/header-slash.svg') no-repeat 49%;
 
 		span {
 			font-size: 20px;

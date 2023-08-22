@@ -12,6 +12,7 @@ body {
 }
 
 .wrapper {
+	padding-bottom: 30px;
 	position: relative;
 	background: $gradient-supersoft;
 	border-radius: 0 0 $radius-md $radius-md;
@@ -104,6 +105,10 @@ body {
 }
 
 .main__service {
+	padding-top: 60px;
+}
+
+.main__service-it {
 	padding-top: 80px;
 }
 

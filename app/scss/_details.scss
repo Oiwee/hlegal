@@ -30,13 +30,6 @@
         font-size: 18px;
         text-align: center;
         margin-bottom: 28px;
-
-        & + p {
-            @include text-body($basic-white);
-            font-size: 18px;
-            text-align: center;
-            margin-bottom: 28px;
-        }
     }
 
     // .details__btn
@@ -100,7 +93,6 @@
 
         &::before {
             content: '';
-            display: inline-block;
             width: 6px;
             height: 6px;
             border-radius: $radius-rounded;
@@ -111,5 +103,6 @@
         }
     }
 }
+
 
 
